@@ -14,13 +14,13 @@ public class DoubleArgumentCalculator extends AbstractCalculator {
             arg1=new BigDecimal(param[0]);
         }
         catch (NumberFormatException ex){
-            return "incorrect first argument";
+            return "arguments must be a decimal";
         }
         try{//попытка спарсить второй аргумент
             arg2=new BigDecimal(param[1]);
         }
         catch(NumberFormatException ex){
-            return "incorrect second argument";
+            return "arguments must be a decimal";
         }
         if(operationsMap.get(param[2])!=null){
             try{//попытка произвести вычисление
