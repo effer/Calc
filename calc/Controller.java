@@ -33,7 +33,7 @@ public class Controller {
                         break;
                     case 2:
                         System.out.println("Enter * to multiply arguments,- to subtract arguments,+ to summarize arguments, / to divide arguments, pow to raise to a power(if you want to raise to" +
-                                " a power the second argument must be not greater than a max value of int)");
+                                " a power the second argument must be not greater than a max value of int and must be a positive number)");
                         break;
                 }
             }
