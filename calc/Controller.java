@@ -46,8 +46,8 @@ public class Controller {
     }
     public void work(){
         boolean flag=true;
+        Scanner in=new Scanner(System.in);
         while(flag){
-            Scanner in=new Scanner(System.in);
             processor.processData();
             System.out.println("Enter C if you want to continue");
             if(!in.nextLine().equals("C")){//если пользователь не ввел "C", метод заканчивает работу
