@@ -13,5 +13,6 @@ public interface Calculator {
      * @return
      */
 
-     String result(String[] param);
+     String getResult(String[] param);
+
 }

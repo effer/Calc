@@ -36,7 +36,7 @@ abstract public class AbstractCalculator implements Calculator{
         operationsMap.put("*",mul);
         operationsMap.put("/",div);
     }
-    abstract public String result(String[] param);//этот метод остается абстрактным для возможности расширения.
+    abstract public String getResult(String[] param);//этот метод остается абстрактным для возможности расширения.
     //в рамках данной мне задачи нужно производить операции только с двумя введенными числами, эта возможность будет
     //добавлена в классе-наследнике.
     //Так же, функциональность этого класса может быть расширена для проведения более сложных расчетов.

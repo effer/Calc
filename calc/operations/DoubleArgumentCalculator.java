@@ -1,10 +1,10 @@
 package calc.operations;
 import java.math.BigDecimal;
 public class DoubleArgumentCalculator extends AbstractCalculator {
-    //Этот класс реализует метод вычисления операции(берется из 3 параметра массива аргументов) над первыми двумя введенными числами
+    //Этот класс реализует метод вычисления операции(оператор берется из 3 параметра массива аргументов) над первыми двумя введенными числами
     //(берутся из первых двух элементов массива-аргумента метода).
     @Override
-    public String result(String[] param){
+    public String getResult(String[] param){
         if(param.length!=3){//если в массиве не 3 строки, броаем исключение
             throw new IllegalArgumentException("incorrect argument");
         }
@@ -29,7 +29,7 @@ public class DoubleArgumentCalculator extends AbstractCalculator {
             catch(ArithmeticException e){//обработка возможной ошибки- деления на ноль
                 return "arithmetic exception";
             }
-            catch (Exception ex){
+            catch (Throwable ex){
                 return "another error";//иная ошибка. Исключение может быть брошено во время выполнения иной операции, которую могут добавить
                 //используя addOperation
             }
