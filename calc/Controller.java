@@ -1,6 +1,7 @@
 package calc;
 import calc.operations.*;
 import calc.dataloader.*;
+import java.util.Scanner;
 public class Controller {
 
 
@@ -44,7 +45,15 @@ public class Controller {
         this.calculator=calculator;
     }
     public void work(){
-        processor.processData();
+        boolean flag=true;
+        while(flag){
+            Scanner in=new Scanner(System.in);
+            processor.processData();
+            System.out.println("Enter C if you want to continue");
+            if(!in.nextLine().equals("C")){//если пользователь не ввел "C", метод заканчивает работу
+                flag=false;
+            }
+        }
     }
 
 }
