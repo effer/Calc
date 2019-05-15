@@ -29,7 +29,7 @@ abstract public class AbstractCalculator implements Calculator{
             return bigDecimal.divide(bigDecimal2);
         }
     };
-    protected static  final Map<String,BiFunction<BigDecimal,BigDecimal,BigDecimal>> operationsMap=new HashMap<>();
+    protected   final Map<String,BiFunction<BigDecimal,BigDecimal,BigDecimal>> operationsMap=new HashMap<>();
     {//в этот словарь помещаются арифметические операции, которые будут извлекаться по текстовому ключу, соответствующему каждой операции
         operationsMap.put("+",sum);
         operationsMap.put("-",sub);
@@ -40,4 +40,11 @@ abstract public class AbstractCalculator implements Calculator{
     //в рамках данной мне задачи нужно производить операции только с двумя введенными числами, эта возможность будет
     //добавлена в классе-наследнике.
     //Так же, функциональность этого класса может быть расширена для проведения более сложных расчетов.
+
+
+
+    public Calculator addOperation(String key,BiFunction<BigDecimal,BigDecimal,BigDecimal> function){
+        this.operationsMap.putIfAbsent(key,function);
+        return this;
+    }
 }

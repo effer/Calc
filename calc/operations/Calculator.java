@@ -14,5 +14,4 @@ public interface Calculator {
      */
 
      String result(String[] param);
-
 }
