@@ -1,4 +1,5 @@
 package calc.operations;
+import java.math.RoundingMode;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.function.BiFunction;
@@ -26,7 +27,7 @@ abstract public class AbstractCalculator implements Calculator{
     protected final BiFunction<BigDecimal,BigDecimal,BigDecimal> div = new BiFunction<BigDecimal, BigDecimal, BigDecimal>() {
         @Override
         public BigDecimal apply(BigDecimal bigDecimal, BigDecimal bigDecimal2) {
-            return bigDecimal.divide(bigDecimal2);
+            return bigDecimal.divide(bigDecimal2, RoundingMode.HALF_UP);
         }
     };
     protected   final Map<String,BiFunction<BigDecimal,BigDecimal,BigDecimal>> operationsMap=new HashMap<>();
